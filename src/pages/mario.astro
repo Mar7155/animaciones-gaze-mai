@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="m808s_scorpion" src="/assets/mario/haloce_scorpion.glb"></a-asset-item>
+        <a-asset-item id="wraith" src="/assets/mario/wraith.glb"></a-asset-item>
+        <a-asset-item id="banshee" src="/assets/mario/banshee_halo_5.glb"></a-asset-item>
+      </a-assets>
+
+      <a-entity environment="preset: arches; grounding: false; grid: cross; gridColor: #222; playArea: 1.2; lighting: point"></a-entity>
+
+      <a-entity 
+        gltf-model="#m808s_scorpion" 
+        position="0 0 -5" 
+        scale="0.015 0.015 0.015"
+        rotation="0 90 0"
+        animation="property: position; to: 00 0 -10; dur: 2000; easing: linear; loop: true">
+      </a-entity>
+
+      <a-entity 
+        gltf-model="#wraith" 
+        position="-5 0 -5" 
+        scale="0.3 0.3 0.3"
+        rotation="0 180 0"
+        animation="property: rotation; to: 0 -180 0; loop: true; dur: 4000; easing: linear">
+      </a-entity>
+
+      <a-entity 
+        gltf-model="#banshee" 
+        position="-11 0 -5" 
+        scale="0.7 0.7 0.7"
+        rotation="0 90 30"
+        animation="property: position; to: -11 10 -20; dur: 2000; easing: linear; loop: true">
+      </a-entity>
+
+      <a-light type="directional" position="1 5 2" intensity="1"></a-light>
+      <a-light type="ambient" intensity="0.5"></a-light>
+
+      <a-entity camera look-controls wasd-controls position="0 1.6 0">
+        <a-cursor color="#FF0000"></a-cursor>
+      </a-entity>
+      
+    </a-scene>
+</Layout>

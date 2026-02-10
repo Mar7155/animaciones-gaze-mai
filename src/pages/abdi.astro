@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout>
+    <a-scene>
+      <a-camera position="0 5 10"></a-camera>
+      <a-assets>
+        <a-asset-item id="mario-64" src="/assets/abdi/mario_64_mario.glb"></a-asset-item>
+        <a-asset-item
+          id="mario-flower"
+          src="/assets/abdi/mario_fire_flower.glb"
+        ></a-asset-item>
+        <a-asset-item id="sonic" src="/assets/abdi/2011x_sonic_exe.glb"></a-asset-item>
+        <a-asset-item
+          id="herobrine"
+          src="/assets/abdi/herobrine_-_minecraft.glb"
+        ></a-asset-item>
+        <img id="textura" src="/assets/abdi/grass.webp" />
+      </a-assets>
+
+      <a-plane
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="100"
+        height="100"
+        src="#textura"
+        repeat="20 20"
+      >
+      </a-plane>
+
+      <a-entity
+        gltf-model="#mario-64"
+        scale="5 5 5"
+        position="-8 4 10"
+        rotation="0 360 0"
+        animation="property: position; to: -8 7 10; dir: alternate; loop: true; dur: 800; easing: easeInOutQuad"
+      >
+      </a-entity>
+
+      <a-entity
+        gltf-model="#mario-flower"
+        scale="0.5 0.5 0.5"
+        position="0 2 0"
+        rotation="0 0 0"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+        animation__flotar="property: position; from: 0 2 0; to: 0 3 -3; dir: alternate; loop: true; dur: 4000; easing: easeInOutSine"
+      >
+      </a-entity>
+
+      <a-entity
+        gltf-model="#sonic"
+        scale="1 1 1"
+        position="8 0 -3"
+        animation="property: position; to: 8 0 5; dir: alternate; loop: true; dur: 100; easing: linear"
+        animation__glitch="property: scale; to: 0.01 0.01 0.01; dir: alternate; loop: true; dur: 50; easing: linear"
+      >
+      </a-entity>
+
+      <a-entity
+        gltf-model="#herobrine"
+        scale="0.5 0.5 0.5"
+        position="0 6 -3"
+        animation="property: position; to: 0 6.5 -3; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine"
+      >
+      </a-entity>
+
+      <a-light type="ambient" color="#ffffff"></a-light>
+      <a-light type="directional" position="-1 2 1"></a-light>
+      <a-sky color="#3c0692"></a-sky>
+    </a-scene>
+</Layout>
