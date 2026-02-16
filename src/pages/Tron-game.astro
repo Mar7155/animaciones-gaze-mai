@@ -57,9 +57,9 @@ import Layout from "../layouts/Layout.astro";
         </a-scene>
     </section>
 
-  <script is:inline type="module">
+  <script>
+  import { client } from '@/lib/convex-client.ts';
   import { api } from "../../convex/_generated/api";
-  import { client } from "../../src/lib/convex-client.ts";
 
   // --- CONFIGURACIÓN DE SALA ---
   const params = new URLSearchParams(window.location.search);

@@ -100,8 +100,8 @@ import Layout from "../layouts/Layout.astro";
      </div>
 </Layout>
 
-<script is:inline type="module">
-  import { client } from "../../src/lib/convex-client.ts";
+<script>
+  import { client } from '@/lib/convex-client.ts';
   import { api } from "../../convex/_generated/api";
 
   const btnCreate = document.querySelector('#btn-create');
