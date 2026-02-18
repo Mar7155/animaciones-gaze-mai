@@ -706,7 +706,10 @@ import Layout from "../layouts/Layout.astro"
       }
 
       audioPlayer.addEventListener('ended', playRandomSong);
-      playRandomSong();
+
+      setTimeout(() => {
+        playRandomSong();
+      }, 1000);
       showHint();
     </script>
     <a-scene
