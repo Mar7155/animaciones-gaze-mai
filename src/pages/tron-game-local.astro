@@ -21,6 +21,19 @@ import Layout from "../layouts/Layout.astro"
         '/assets/Tron-game/sounds/Soundtrack_3.mp3',
       ];
 
+      const sfxPowerUp = new Audio('/assets/Tron-game/sounds/power-up.mp3');
+      const sfxShield = new Audio('/assets/Tron-game/sounds/shield.mp3');
+      const sfxBreakShield = new Audio('/assets/Tron-game/sounds/break-shield.mp3');
+      const sfxTurbo = new Audio('/assets/Tron-game/sounds/turbo.mp3');
+      const sfxLose = new Audio('/assets/Tron-game/sounds/lose.mp3');
+      const sfxStart = new Audio('/assets/Tron-game/sounds/start.mp3');
+
+      
+      function playSound(audioObj) {
+          audioObj.currentTime = 0; 
+          audioObj.play().catch(e => console.log("Error playing sound:", e));
+      }
+
       let lastPlayedIndex = -1;
       const audioPlayer = new Audio();
 
@@ -175,6 +188,7 @@ import Layout from "../layouts/Layout.astro"
 
         collectPowerUp(type) {
           if (this.currentPowerUp) return;
+          playSound(sfxPowerUp);
           this.currentPowerUp = type;
 
           if (type === "SHIELD") {
@@ -210,6 +224,7 @@ import Layout from "../layouts/Layout.astro"
 
         useTurbo() {
           if (this.currentPowerUp !== "TURBO") return;
+          playSound(sfxTurbo);
           this.speed = this.baseSpeed * 3;
           this.currentPowerUp = null;
 
@@ -375,7 +390,7 @@ import Layout from "../layouts/Layout.astro"
         die() {
               if (this.dead) return;
                   this.dead = true;
-
+                  playSound(sfxLose);
                     if (this.shieldEntity) {
                         this.shieldEntity.remove();
                         this.shieldEntity = null;
@@ -603,6 +618,7 @@ import Layout from "../layouts/Layout.astro"
       window.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && !gameStarted) {
           gameStarted = true;
+          playSound(sfxStart);
           showHint();
           const menu = document.querySelector("#start-menu");
 
