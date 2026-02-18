@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Laser input UI</title>
+    <meta name="description" content="Laser input UI • A-Frame">
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+    <a-scene background="color: #212" environment cursor="rayOrigin: mouse; fuse: false"
+        raycaster="objects: .raycastable" info-message="htmlSrc: #messageText">
+        <a-assets>
+            <a-asset-item id="messageText" src="message.html"></a-asset-item>
+            
+            <img id="kazetachinu" src="https://cdn.aframe.io/examples/ui/kazetachinu.jpg" crossorigin="anonymous" />
+            <img id="kazetachinuPoster" src="https://cdn.aframe.io/examples/ui/kazetachinuPoster.jpg" crossorigin="anonymous" />
+            <img id="ponyo" src="https://cdn.aframe.io/examples/ui/ponyo.jpg" crossorigin="anonymous" />
+            <img id="ponyoPoster" src="https://cdn.aframe.io/examples/ui/ponyoPoster.jpg" crossorigin="anonymous" />
+            <img id="karigurashi" src="https://cdn.aframe.io/examples/ui/karigurashi.jpg" crossorigin="anonymous" />
+            <img id="karigurashiPoster" src="https://cdn.aframe.io/examples/ui/karigurashiPoster.jpg" crossorigin="anonymous" />
+
+            <img id="howl" src="https://th.bing.com/th/id/OIP.aQOPY4yTuCSDusLa35g0fQHaEA?w=320&h=180&c=7&r=0&o=7&pid=1.7&rm=3" crossorigin="anonymous" />
+            <img id="howlPoster" src="https://tse4.mm.bing.net/th/id/OIP.8jHpZycgbe99iTEHWAugwQHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" crossorigin="anonymous" />
+            <img id="kiki" src="https://th.bing.com/th/id/OIP.AebgV5Lj9DGo1j994tdAVgHaE0?w=273&h=180&c=7&r=0&o=7&pid=1.7&rm=3" crossorigin="anonymous" />
+            <img id="kikiPoster" src="https://th.bing.com/th/id/OIP.XofbA082452D4QHIArPrLgHaLH?w=118&h=180&c=7&r=0&o=7&pid=1.7&rm=3" crossorigin="anonymous" />
+            <img id="laputa" src="https://th.bing.com/th/id/OIP.EOIN5Eo76jt9dzNUdx_QrgHaEX?w=300&h=180&c=7&r=0&o=7&pid=1.7&rm=3" crossorigin="anonymous" />
+            <img id="laputaPoster" src="data:image/webp;base64,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" crossorigin="anonymous" />
+
+            <a-mixin id="frame" geometry="primitive: plane; width: 0.5783552; height: 0.8192"
+                material="color: white; shader: flat"
+                animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+                animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"></a-mixin>
+            <a-mixin id="poster" geometry="primitive: plane; width: 0.544768; height: 0.786432"
+                material="color: white; shader: flat" position="0 0 0.005"></a-mixin>
+            <a-mixin id="movieImage" geometry="primitive: plane; width: 1.5; height: 0.81"
+                material="shader: flat; transparent: true" position="0 0.495 0.002"></a-mixin>
+        </a-assets>
+
+        <a-entity id="background" position="0 0 0" geometry="primitive: sphere; radius: 2.0"
+            material="color: red; side: back; shader: flat" scale="0.001 0.001 0.001" visible="false"
+            class="raycastable">
+        </a-entity>
+
+        <a-entity position="0 1.6 0" camera look-controls="magicWindowTrackingEnabled: false; touchEnabled: false; mouseEnabled: false">
+            <a-entity id="fadeBackground" geometry="primitive: sphere; radius: 2.5"
+                material="color: #999999; side: back; shader: flat; blending: subtractive;" visible="false">
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="leftHand" laser-controls="hand: left" raycaster="objects: .raycastable"></a-entity>
+        <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: .raycastable" line="color: #118A7E"></a-entity>
+
+        <a-entity id="ui" position="0 1.6 -2.5">
+            <a-entity id="menu" highlight>
+                <a-entity id="karigurashiButton" position="-2 0 0" mixin="frame" class="raycastable menu-button">
+                    <a-entity material="src: #karigurashiPoster" mixin="poster"></a-entity>
+                </a-entity>
+                <a-entity id="kazetachinuButton" position="-1.2 0 0" mixin="frame" class="raycastable menu-button">
+                    <a-entity material="src: #kazetachinuPoster" mixin="poster"></a-entity>
+                </a-entity>
+                <a-entity id="ponyoButton" position="-0.4 0 0" mixin="frame" class="raycastable menu-button">
+                    <a-entity material="src: #ponyoPoster" mixin="poster"></a-entity>
+                </a-entity>
+                <a-entity id="howlButton" position="0.4 0 0" mixin="frame" class="raycastable menu-button">
+                    <a-entity material="src: #howlPoster" mixin="poster"></a-entity>
+                </a-entity>
+                <a-entity id="kikiButton" position="1.2 0 0" mixin="frame" class="raycastable menu-button">
+                    <a-entity material="src: #kikiPoster" mixin="poster"></a-entity>
+                </a-entity>
+                <a-entity id="laputaButton" position="2 0 0" mixin="frame" class="raycastable menu-button">
+                    <a-entity material="src: #laputaPoster" mixin="poster"></a-entity>
+                </a-entity>
+            </a-entity>
+
+            <a-entity id="infoPanel" position="0 0 0.5" info-panel visible="false" scale="0.001 0.001 0.001"
+                geometry="primitive: plane; width: 1.5; height: 1.8"
+                material="color: #333333; shader: flat; transparent: false" class="raycastable">
+                
+                <a-entity id="ponyoMovieImage" mixin="movieImage" material="src: #ponyo" visible="false"></a-entity>
+                <a-entity id="kazetachinuMovieImage" mixin="movieImage" material="src: #kazetachinu" visible="false"></a-entity>
+                <a-entity id="karigurashiMovieImage" mixin="movieImage" material="src: #karigurashi" visible="false"></a-entity>
+                <a-entity id="howlMovieImage" mixin="movieImage" material="src: #howl" visible="false"></a-entity>
+                <a-entity id="kikiMovieImage" mixin="movieImage" material="src: #kiki" visible="false"></a-entity>
+                <a-entity id="laputaMovieImage" mixin="movieImage" material="src: #laputa" visible="false"></a-entity>
+
+                <a-entity id="movieTitle" position="-0.68 -0.1 0"
+                    text="shader: msdf; anchor: left; width: 1.5; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Title"></a-entity>
+                <a-entity id="movieDescription" position="-0.68 -0.2 0"
+                    text="baseline: top; shader: msdf; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Description"></a-entity>
+            </a-entity>
+        </a-entity>
+    </a-scene>
+
+    <script>
+        AFRAME.registerComponent('highlight', {
+            init: function () {
+                var buttonEls = this.buttonEls = this.el.querySelectorAll('.menu-button');
+                var backgroundEl = document.querySelector('#background');
+                this.onClick = this.onClick.bind(this);
+                this.onMouseEnter = this.onMouseEnter.bind(this);
+                this.onMouseLeave = this.onMouseLeave.bind(this);
+                this.reset = this.reset.bind(this);
+                backgroundEl.addEventListener('click', this.reset);
+                for (var i = 0; i < buttonEls.length; ++i) {
+                    buttonEls[i].addEventListener('mouseenter', this.onMouseEnter);
+                    buttonEls[i].addEventListener('mouseleave', this.onMouseLeave);
+                    buttonEls[i].addEventListener('click', this.onClick);
+                }
+            },
+            onClick: function (evt) {
+                evt.target.pause();
+                evt.target.setAttribute('material', 'color', '#046de7');
+                this.el.addState('clicked');
+                evt.target.object3D.scale.set(1.2, 1.2, 1.2);
+            },
+            onMouseEnter: function (evt) {
+                var buttonEls = this.buttonEls;
+                evt.target.setAttribute('material', 'color', '#046de7');
+                for (var i = 0; i < buttonEls.length; ++i) {
+                    if (evt.target === buttonEls[i]) { continue; }
+                    buttonEls[i].setAttribute('material', 'color', 'white');
+                }
+            },
+            onMouseLeave: function (evt) {
+                if (this.el.is('clicked')) { return; }
+                evt.target.setAttribute('material', 'color', 'white');
+            },
+            reset: function () {
+                var buttonEls = this.buttonEls;
+                for (var i = 0; i < buttonEls.length; ++i) {
+                    this.el.removeState('clicked');
+                    buttonEls[i].play();
+                    buttonEls[i].emit('mouseleave');
+                }
+            }
+        });
+
+        AFRAME.registerComponent('info-panel', {
+            init: function () {
+                var buttonEls = document.querySelectorAll('.menu-button');
+                var fadeBackgroundEl = this.fadeBackgroundEl = document.querySelector('#fadeBackground');
+                this.movieTitleEl = document.querySelector('#movieTitle');
+                this.movieDescriptionEl = document.querySelector('#movieDescription');
+
+                this.movieInfo = {
+                    karigurashiButton: {
+                        title: 'The Secret World of Arrietty (2010)',
+                        imgEl: document.querySelector('#karigurashiMovieImage'),
+                        description: 'A family of tiny people live secretly in the walls and floors of a typical household.'
+                    },
+                    kazetachinuButton: {
+                        title: 'The Wind Rises (2013)',
+                        imgEl: document.querySelector('#kazetachinuMovieImage'),
+                        description: 'A fictionalised biographical film of Jiro Horikoshi, designer of the Mitsubishi A6M Zero.'
+                    },
+                    ponyoButton: {
+                        title: 'Ponyo (2008)',
+                        imgEl: document.querySelector('#ponyoMovieImage'),
+                        description: 'A goldfish princess who wishes to become human after falling in love with a boy.'
+                    },
+                    howlButton: {
+                        title: 'Howl\'s Moving Castle (2004)',
+                        imgEl: document.querySelector('#howlMovieImage'),
+                        description: 'A cursed young woman finds refuge in a wizard\'s walking castle.'
+                    },
+                    kikiButton: {
+                        title: 'Kiki\'s Delivery Service (1989)',
+                        imgEl: document.querySelector('#kikiMovieImage'),
+                        description: 'A young witch moves to a new town and uses her flying ability to earn a living.'
+                    },
+                    laputaButton: {
+                        title: 'Castle in the Sky (1986)',
+                        imgEl: document.querySelector('#laputaMovieImage'),
+                        description: 'Two children search for a legendary floating castle while being chased by pirates.'
+                    }
+                };
+
+                this.onMenuButtonClick = this.onMenuButtonClick.bind(this);
+                this.onBackgroundClick = this.onBackgroundClick.bind(this);
+                this.backgroundEl = document.querySelector('#background');
+                for (var i = 0; i < buttonEls.length; ++i) {
+                    buttonEls[i].addEventListener('click', this.onMenuButtonClick);
+                }
+                this.backgroundEl.addEventListener('click', this.onBackgroundClick);
+            },
+            onMenuButtonClick: function (evt) {
+                var movieInfo = this.movieInfo[evt.currentTarget.id];
+                this.backgroundEl.object3D.scale.set(1, 1, 1);
+                this.el.object3D.scale.set(1, 1, 1);
+                if (AFRAME.utils.device.isMobile()) { this.el.object3D.scale.set(1.4, 1.4, 1.4); }
+                this.el.object3D.visible = true;
+                this.fadeBackgroundEl.object3D.visible = true;
+
+                if (this.movieImageEl) { this.movieImageEl.object3D.visible = false; }
+                this.movieImageEl = movieInfo.imgEl;
+                this.movieImageEl.object3D.visible = true;
+
+                this.movieTitleEl.setAttribute('text', 'value', movieInfo.title);
+                this.movieDescriptionEl.setAttribute('text', 'value', movieInfo.description);
+            },
+            onBackgroundClick: function (evt) {
+                this.backgroundEl.object3D.scale.set(0.001, 0.001, 0.001);
+                this.el.object3D.scale.set(0.001, 0.001, 0.001);
+                this.el.object3D.visible = false;
+                this.fadeBackgroundEl.object3D.visible = false;
+            }
+        });
+
+        AFRAME.registerComponent('info-message', {
+            init: function () {
+                console.log("Info message component ready.");
+            }
+        });
+    </script>
+</body>
+</html>
