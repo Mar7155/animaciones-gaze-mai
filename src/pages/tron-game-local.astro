@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro"
     <script>
       const ARENA_LIMIT = 39.5;
       const TRAIL_STEP = 0.5;
-      const VICTORY_SCORE = 10;
+      const VICTORY_SCORE = 5;
       const trails = [];
 
       let gameStarted = false;
@@ -709,7 +709,7 @@ import Layout from "../layouts/Layout.astro"
 
       setTimeout(() => {
         playRandomSong();
-      }, 1000);
+      }, 2500);
       showHint();
     </script>
     <a-scene
